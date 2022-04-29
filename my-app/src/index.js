@@ -10,31 +10,34 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //     <App  name="Mark"/>
 //   </React.StrictMode>
 // );
-class Square extends React.Component {
-  constructor(props) {
-    super(props);
-    //this.state 被视为一个组件的私有属性
-    this.state = {
-      value:null
-    }
-  }
-  render() {
-    return (
-      // <button 
-      //       className="square" 
-      //       onClick={()=>{this.setState({value:'X'})}} >
-      //   {this.state.value}
+function Square(props) {
+  return (
+    <button 
+    className="square" 
+    onClick = {props.onClick} >
+{props.value}
 
-      // </button>
-        <button 
-            className="square" 
-            onClick={()=>{this.props.onClick()}} >
-        {this.props.value}
-
-      </button>
-    );
-  }
+</button>
+  )
 }
+// class Square extends React.Component {
+//   render() {
+//     return (
+//       // <button 
+//       //       className="square" 
+//       //       onClick={()=>{this.setState({value:'X'})}} >
+//       //   {this.state.value}
+
+//       // </button>
+//         <button 
+//             className="square" 
+//             onClick={()=>{this.props.onClick()}} >
+//         {this.props.value}
+
+//       </button>
+//     );
+//   }
+// }
 
 class Board extends React.Component {
   constructor(props) {
